@@ -1,20 +1,31 @@
 import axios from 'axios'
 import React from 'react'
 import Empform from './Empform'
+import { useEffect } from 'react';
+import { useState } from 'react'
 
 const Dashboard = () => {
 
-  var empData = {}
+  // var empData = {}
 
-  var apiLink = "https://jsonplaceholder.typicode.com/users"
+  // var apiLink = "https://jsonplaceholder.typicode.com/users"
 
-  fetchData = () => {
-    axios.get(apiLink).then(
-      (response,) => {
-        console.log(response)
-      }
-    ).catch()
-  }
+  // fetchData = () => {
+  //   axios.get(apiLink).then(
+  //     (response,) => {
+  //       console.log(response)
+  //     }
+  //   ).catch()
+  // }
+
+  const [empData, setEmpData] = useState([]);
+    useEffect(() => {
+        axios.get(`https://jsonplaceholder.typicode.com/users`)
+                .then((response) => {
+                    setEmpData(response.data);
+                })
+        
+    }, [])
 
 
   return (
