@@ -6,18 +6,6 @@ import { useState } from 'react'
 
 const Dashboard = () => {
 
-  // var empData = {}
-
-  // var apiLink = "https://jsonplaceholder.typicode.com/users"
-
-  // fetchData = () => {
-  //   axios.get(apiLink).then(
-  //     (response,) => {
-  //       console.log(response)
-  //     }
-  //   ).catch()
-  // }
-
   const [empData, setEmpData] = useState([]);
     useEffect(() => {
         axios.get(`https://jsonplaceholder.typicode.com/users`)
